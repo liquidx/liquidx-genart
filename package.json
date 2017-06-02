@@ -1,0 +1,26 @@
+{
+  "name": "liquidx-genart",
+  "version": "0.0.1",
+  "description": "Generative Art by @liquidx",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.15.2",
+    "express-handlebars": "^3.0.0",    
+ 		"node-sass-middleware": "0.9.8"
+  },
+  "engines": {
+    "node": "6.10.x"
+  },
+  "repository": {
+    "url": "https://github.com/liquidx/liquidx-genart/"
+  },
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "glitch",
+    "express"
+  ]
+}

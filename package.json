@@ -7,9 +7,9 @@
     "start": "node server.js"
   },
   "dependencies": {
-    "express": "^4.15.2",
-    "express-handlebars": "^3.0.0",    
- 		"node-sass-middleware": "0.9.8"
+    "express": "^4.16.2",
+    "express-handlebars": "^3.0.0",
+    "node-sass-middleware": "^0.11.0"
   },
   "engines": {
     "node": "6.10.x"

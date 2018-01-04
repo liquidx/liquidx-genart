@@ -1,3 +1,3 @@
-Generative Art by @liquidx.
-===========================
+## Daily Generative Sketches by @liquidx.
 
+[https://liquidx-genart.glitch.me/]()

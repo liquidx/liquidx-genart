@@ -15,7 +15,7 @@ let CANVAS = {
 // p5.js - capture helper methods.
 let CAPTURER = {
   // This is for reference on how to make frames in to a movie.
-  ffmpeg_cmd: "ffmpeg -r 30 -f image2 -pattern_type glob -i canvas\*.png -s 960x960 -vcodec libx264 -crf 5 -framerate 30 -pix_fmt yuv420p animation.mp4",
+  ffmpeg_cmd: "ffmpeg -r 30 -f image2 -pattern_type glob -i canvas\*.png -s 480x480 -vcodec libx264 -crf 5 -framerate 30 -pix_fmt yuv420p animation.mp4",
   
   
   canvas: null,

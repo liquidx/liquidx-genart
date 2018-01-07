@@ -4,7 +4,22 @@ let COLORS = {
   red: '#B71C1C',
   orange: '#E64A19',
   orange_light: '#FF5722',
-  orange_verylight: '#FF8A65'
+  orange_verylight: '#FF8A65',
+};
+
+let PASTELS = {
+  red: '#FF6865',
+  orange: '#FFA985',
+  yellow: '#FFF491',
+  green: '#85CC9F',
+  blue: '#92D1C7'
+};
+
+let ORANGE = {
+  primary: '#FF6600',
+  secondary: '#C13B00',
+  black: '#1B1D1E',
+  grey: '#424E4F'
 };
 
 let CANVAS = {

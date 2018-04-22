@@ -1,5 +1,6 @@
 let COLORS = {
   black: '#000000',
+  darkgrey: '#333333',
   white: '#d0d0d0',
   red: '#B71C1C',
   orange: '#E64A19',

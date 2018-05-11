@@ -62,6 +62,7 @@ let CAPTURER = {
     };
     this.captureEndFn = function() {
       console.log("done");
+      console.log(this.ffmpeg_cmd);
     }
   },
   

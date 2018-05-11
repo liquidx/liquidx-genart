@@ -32,4 +32,5 @@ app.get("/run/:seq", (request, response) => {
 
 var listener = app.listen(process.env.PORT, function () {
   console.log('Your app is listening on port ' + listener.address().port);
+  console.log('http://localhost:' + listener.address().port);
 });

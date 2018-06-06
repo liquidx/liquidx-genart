@@ -9,13 +9,6 @@ var targetFrameRate = 30;
 var loopDuration = 3;
 var period = targetFrameRate * loopDuration;
 
-// Grid
-
-
-function pulse(frequency, intensity) {
-  const v = Math.atan(Math.sin(value * Math.PI * frequency) * intensity);
-  return (v + Math.PI / 2) / Math.PI;
-}
 
 function drawLines(lineCount, lineCountBuffer, degOffset = 0) {
   var deg = (t % period) / period * TWO_PI;

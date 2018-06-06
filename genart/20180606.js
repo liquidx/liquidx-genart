@@ -16,38 +16,50 @@ function drawLines(
   originX = 0,
   originY = 0,
   lineCount = 24, 
-  lineCountBuffer = 16, 
+  lineCountBuffer = 0, 
   degOffset = 0, 
   strokeWidth = 8) {
+    
   var deg = (t % period) / period * TWO_PI;
-
-  var spacingY = parseInt(height / lineCount);
-
   var localDeg = deg + degOffset;
+  var spacingY = parseInt(height / lineCount);
+  var baseStrokeWidth = strokeWidth / 2;
   
   for (var i = -lineCountBuffer; i < lineCount + lineCountBuffer; i++) {
+    
     var startX = originX;
     var startY = originY + spacingY * i + spacingY / 2;
     var endX = startX + width ;
     var endY = startY + spacingY * (i + 8) + spacingY / 2;
 
-    var wavePeriod = 4 + 2 * sin(localDeg);
+    strokeWidth = baseStrokeWidth;
+    if ((cos(deg) + 1) / 2 * lineCount >= i &&
+        (cos(deg + PI / 8) + 1) / 2 * lineCount < i) {
+//    if ((t % period) / eriod * lineCount < i) {
+      strokeWidth += 4;
+    }
 
-    strokeWeight(strokeWidth);
     stroke(COLORS.darkgrey);
     beginShape();
-    curveVertex(startX, startY);
+    strokeWeight(strokeWidth);
+
     var stops = 64;
     var xIncr = width / stops;
-    var amplitude = spacingY / 4 * sin(localDeg + i * PI / stops);
-    //var amplitude = pulse(spacingY / 4, 1/4, spacingY);
+    var yIncr = (i % 2 == 0 ? 1 : -1) * spacingY / stops;
+    var amplitude = spacingY * sin(localDeg + i * PI / stops);
     
-    for (var n = 0; n < stops + 2; n++) {
+    for (var n = 0; n < stops + 1; n++) {
       var cx = startX + n * xIncr;
-      var cy = startY + amplitude * sin(n * PI / 4 + localDeg + (i + n) * PI / 8); //sin(n / 8 * TWO_PI * 2 + localDeg);
+      var cy = startY + amplitude * sin(PI / 8 + localDeg); //sin(n / 8 * TWO_PI * 2 + localDeg);
+      //var cy = startY + n * yIncr + amplitude * sin(PI / 8 + localDeg); //sin(n / 8 * TWO_PI * 2 + localDeg);
       curveVertex(cx, cy);
+      
+      // start and end vertices need to be defined twice.
+      if (n == 0 || n == stops) {
+        curveVertex(cx, cy);
+      }
+     
     }
-    //curveVertex(endX, endY);
     endShape();
     
   }
@@ -68,9 +80,7 @@ function draw() {
             lineCount = 24,
             lineCountBuffer = 0,
             degOffset = 0,
-            strokeWidth = 12);
-  //drawLines(16, 16, 0, 1 + 1 * cos(deg), 16);
-  
+            strokeWidth = 8);
   
   t = t + 1;  // increment frame.
   CAPTURER.captureFrame();

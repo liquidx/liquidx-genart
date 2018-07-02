@@ -24,6 +24,7 @@ app.use(express.static('public'));
 app.use(express.static('genart'));
 app.use(express.static('node_modules/p5/lib'));
 app.use(express.static('node_modules/p5/lib/addons'));
+app.use(express.static('node_modules/dat.gui/build'));
 
 app.get("/run/:seq", (request, response) => {
   response.render('run', {seq: request.params.seq});

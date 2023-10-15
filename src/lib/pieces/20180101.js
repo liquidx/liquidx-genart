@@ -62,7 +62,7 @@ function draw(p5s) {
 
   CAPTURER.captureFrame();
   if (t > max_t) {
-    noLoop();
+    p5s.noLoop();
   }
 }
 

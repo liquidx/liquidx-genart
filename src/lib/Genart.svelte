@@ -37,9 +37,6 @@
   import p20180617 from "./pieces/20180617.js";
   import p20180618 from "./pieces/20180618.js";
 
-  let selectedPieceId = null;
-  let selectedPiece = null;
-
   const pieces = [
     { id: "20180618", renderer: p20180618, name: "033 Optical Flow 14" },
     { id: "20180617", renderer: p20180617, name: "032 Optical Flow 13" },
@@ -76,6 +73,10 @@
     { id: "20180101", renderer: p20180101, name: "001 Cheat day" },
   ];
 
+  let selectedPieceId = null;
+  let selectedPiece = null;
+  export let indexLabel = "Genart";
+
   onMount(() => {
     const hash = window.location.hash;
     const pieceId = hash.replace("#", "");
@@ -97,7 +98,11 @@
 </script>
 
 {#if selectedPiece}
-  <GenartViewer piece={selectedPiece} on:indexDidSelect={indexDidSelect} />
+  <GenartViewer
+    piece={selectedPiece}
+    on:indexDidSelect={indexDidSelect}
+    backLabel={indexLabel}
+  />
 {:else}
   <GenartIndex {pieces} on:pieceDidSelect={pieceDidSelect} />
 {/if}

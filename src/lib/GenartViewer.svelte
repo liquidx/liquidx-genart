@@ -3,6 +3,7 @@
   import { createEventDispatcher } from "svelte";
 
   export let piece;
+  export let backLabel;
   const dispatch = createEventDispatcher();
 
   let parentEl;
@@ -21,7 +22,7 @@
 </script>
 
 <div id="geometryControls">
-  <a href="#" on:click={() => dispatch("indexDidSelect")}>back</a>
+  <a href="#" on:click={() => dispatch("indexDidSelect")}>{backLabel}</a>
 </div>
 <div id="canvasAndControls">
   <div id="container" bind:this={parentEl} />

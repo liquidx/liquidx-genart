@@ -1,1 +1,1 @@
-export { default as Geometrics } from "./Genart.svelte";
+export { default as Genart } from "./Genart.svelte";

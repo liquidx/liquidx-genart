@@ -1,6 +1,6 @@
 {
   "name": "liquidx-genart",
-  "version": "1.0.20231018",
+  "version": "1.0.20231019",
   "description": "Generative Art by @liquidx",
   "scripts": {
     "dev": "vite dev",
@@ -17,11 +17,12 @@
       "svelte": "./dist/index.js"
     }
   },
+  "svelte": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "sideEffects": false,
   "type": "module",
   "files": [
-    "dist",
-    "!dist/**/*.test.*",
-    "!dist/**/*.spec.*"
+    "dist"
   ],
   "peerDependencies": {
     "svelte": "^4.0.0"

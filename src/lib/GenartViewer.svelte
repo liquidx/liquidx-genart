@@ -22,7 +22,7 @@
 </script>
 
 <div id="geometryControls">
-  <a href="#" on:click={() => dispatch("indexDidSelect")}>{backLabel}</a>
+  <a href="#index" on:click={() => dispatch("indexDidSelect")}>{backLabel}</a>
 </div>
 <div id="canvasAndControls">
   <div id="container" bind:this={parentEl} />

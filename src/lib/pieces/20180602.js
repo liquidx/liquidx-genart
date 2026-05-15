@@ -20,7 +20,7 @@ function drawLines(
   lineCount = 24,
   lineCountBuffer = 16,
   degOffset = 0,
-  strokeWidth = 8
+  strokeWidth = 8,
 ) {
   var deg = ((t % period) / period) * Math.PI * 2;
 
@@ -28,6 +28,7 @@ function drawLines(
 
   var localDeg = deg + degOffset;
 
+  p5s.splineProperty("ends", p5s.EXCLUDE);
   for (var i = -lineCountBuffer; i < lineCount + lineCountBuffer; i++) {
     var startX = originX;
     var startY = originY + spacingY * i + spacingY / 2;
@@ -39,7 +40,7 @@ function drawLines(
     p5s.strokeWeight(strokeWidth);
     p5s.stroke(COLORS.darkgrey);
     p5s.beginShape();
-    p5s.curveVertex(startX, startY);
+    p5s.splineVertex(startX, startY);
     var stops = 64;
     var xIncr = width / stops;
     var amplitude = (spacingY / 4) * Math.sin(localDeg + (i * Math.PI) / stops);
@@ -51,7 +52,7 @@ function drawLines(
         startY +
         amplitude *
           Math.sin((n * Math.PI) / 4 + localDeg + ((i + n) * Math.PI) / 8); //sin(n / 8 * Math.PI * 2 * 2 + localDeg);
-      p5s.curveVertex(cx, cy);
+      p5s.splineVertex(cx, cy);
     }
     //curveVertex(endX, endY);
     p5s.endShape();

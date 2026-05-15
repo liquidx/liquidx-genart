@@ -52,11 +52,7 @@ function draw(p5s) {
       var sinoffset = Math.sin(deg + (a * Math.PI * 2) / amount);
       var x = x1 + (spacing / 2) * sinoffset;
       var y = y1 + a * (lineHeight / amount);
-      if (a == 0) {
-        p5s.vertex(x, y);
-      } else {
-        p5s.bezierVertex(x, y, x - 1, y, x, y);
-      }
+      p5s.splineVertex(x, y);
     }
     p5s.endShape();
   }

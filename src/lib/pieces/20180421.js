@@ -19,6 +19,7 @@ function draw(p5s) {
   p5s.clear();
   p5s.background(COLORS.white);
   p5s.noFill();
+  p5s.splineProperty("ends", p5s.EXCLUDE);
 
   var deg = ((t % period) / period) * Math.PI * 2;
 
@@ -32,7 +33,7 @@ function draw(p5s) {
     p5s.strokeWeight(3 + 1 * Math.sin(deg) * (Math.abs(i) % 2));
     p5s.stroke(COLORS.black);
     p5s.beginShape();
-    p5s.curveVertex(startX, startY);
+    p5s.splineVertex(startX, startY);
     for (var n = 0; n < 32; n++) {
       var cx = startX + ((endX - startX) * n) / 8;
       // don't understand this control point, worth exploring more.
@@ -40,9 +41,9 @@ function draw(p5s) {
         startY +
         (20 * n) / 8 +
         (endY - startY) * Math.sin((n / 8) * Math.PI * 2);
-      p5s.curveVertex(cx, cy);
+      p5s.splineVertex(cx, cy);
     }
-    p5s.curveVertex(endX, endY);
+    p5s.splineVertex(endX, endY);
     p5s.endShape();
 
     //line(x1, y1, CANVAS.width, y1);

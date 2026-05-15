@@ -49,7 +49,8 @@ function draw(p5s) {
     var c = p5s.color(ORANGE.primary);
     c.setAlpha(255 - i * 20);
     p5s.stroke(c);
-    p5s.curve(cx1, cy1, x1, y1, x2, y2, cx2, cy2);
+    p5s.splineProperty("ends", p5s.EXCLUDE);
+    p5s.spline(cx1, cy1, x1, y1, x2, y2, cx2, cy2);
   }
 
   t = t + 1; // increment frame.

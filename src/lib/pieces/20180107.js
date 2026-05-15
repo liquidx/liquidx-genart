@@ -42,7 +42,8 @@ function draw(p5s) {
       p5s.stroke(ORANGE.secondary);
     }
     //line(x1, y1, CANVAS.width, y1);
-    p5s.curve(cx1, cy1, x1, y1, x2, y2, cx2, cy2);
+    p5s.splineProperty("ends", p5s.EXCLUDE);
+    p5s.spline(cx1, cy1, x1, y1, x2, y2, cx2, cy2);
   }
 
   t = t + 1; // increment frame.

@@ -44,7 +44,7 @@ function drawLines(
   lineCount = 24,
   lineCountBuffer = 0,
   degOffset = 0,
-  strokeWidth = 8
+  strokeWidth = 8,
 ) {
   var deg = _deg();
 
@@ -64,6 +64,7 @@ function drawLines(
     p5s.stroke(COLORS.darkgrey);
     p5s.beginShape();
     p5s.strokeWeight(strokeWidth);
+    p5s.splineProperty("ends", p5s.EXCLUDE);
 
     var stops = 64;
     var xIncr = width / stops;
@@ -74,11 +75,11 @@ function drawLines(
       var cx = startX + n * xIncr;
       var cy =
         startY + amplitude * Math.sin((n / 8) * Math.PI * 2 * 2 + localDeg);
-      p5s.curveVertex(cx, cy);
+      p5s.splineVertex(cx, cy);
 
       // start and end vertices need to be defined twice.
       if (n == 0 || n == stops) {
-        p5s.curveVertex(cx, cy);
+        p5s.splineVertex(cx, cy);
       }
     }
     p5s.endShape();

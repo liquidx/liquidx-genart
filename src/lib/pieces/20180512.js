@@ -25,6 +25,7 @@ function draw(p5s) {
   p5s.rotate(Math.PI / 4);
   p5s.translate(0, -CANVAS.height / 2);
 
+  p5s.splineProperty("ends", p5s.EXCLUDE);
   for (var i = -12; i < lineCount + 12; i++) {
     var startX = 0;
     var startY = gridSpacing * i + gridSpacing / 2;
@@ -38,14 +39,14 @@ function draw(p5s) {
     p5s.strokeWeight(4);
     p5s.stroke(COLORS.darkgrey);
     p5s.beginShape();
-    p5s.curveVertex(startX, startY);
+    p5s.splineVertex(startX, startY);
     for (var n = 0; n < 64; n++) {
       var cx = startX + (endX - startX) * n;
       // don't understand this control point, worth exploring more.
       var cy = startY + 50 * Math.sin((n / 8) * Math.PI * 2 * 2 + deg);
-      p5s.curveVertex(cx, cy);
+      p5s.splineVertex(cx, cy);
     }
-    p5s.curveVertex(endX, endY);
+    p5s.splineVertex(endX, endY);
     p5s.endShape();
   }
   p5s.pop();

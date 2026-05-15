@@ -1,6 +1,6 @@
 {
   "name": "liquidx-genart",
-  "version": "1.0.20231020",
+  "version": "2.0.20260515",
   "description": "Generative Art by @liquidx",
   "scripts": {
     "dev": "vite dev",

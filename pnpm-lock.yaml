@@ -8,8 +8,8 @@ importers:
 
   .:
     dependencies:
-      lodash:
-        specifier: ^4.18.1
+      lodash-es:
+        specifier: ^4.17.21
         version: 4.18.1
       p5:
         specifier: ^2.2.3
@@ -438,8 +438,8 @@ packages:
   locate-character@3.0.0:
     resolution: {integrity: sha512-SW13ws7BjaeJ6p7Q6CO2nchbYEc3X3J6WrmTTDto7yMPqVSZTUyY5Tjbid+Ab8gLnATtygYtiDIJGQRRn2ZOiA==}
 
-  lodash@4.18.1:
-    resolution: {integrity: sha512-dMInicTPVE8d1e5otfwmmjlxkZoUpiVLwyeTdUsi/Caj/gfzzblBcCE5sRHV/AsjuCmxWrte2TNGSYuCeCq+0Q==}
+  lodash-es@4.18.1:
+    resolution: {integrity: sha512-J8xewKD/Gk22OZbhpOVSwcs60zhd95ESDwezOFuA3/099925PdHJ7OFHNTGtajL3AlZkykD32HykiMo+BIBI8A==}
 
   magic-string@0.30.21:
     resolution: {integrity: sha512-vd2F4YUyEXKGcLHoq+TEyCjxueSeHnFxyyjNp80yg0XV4vUhnDer/lvvlqM/arB5bXQN5K2/3oinyCRyx8T2CQ==}
@@ -915,7 +915,7 @@ snapshots:
 
   locate-character@3.0.0: {}
 
-  lodash@4.18.1: {}
+  lodash-es@4.18.1: {}
 
   magic-string@0.30.21:
     dependencies:

@@ -1,9 +1,9 @@
-import _ from "lodash";
+import { clone } from "lodash-es";
 
 const _onePolyCircle = (s, context, cell, seq, contextTransform) => {
   let cellContext = context;
   if (contextTransform) {
-    cellContext = contextTransform(_.clone(cellContext), cell, seq);
+    cellContext = contextTransform(clone(cellContext), cell, seq);
   }
 
   let widthTransform = cellContext.cellWidthTransform || 0;
@@ -27,7 +27,7 @@ const _onePolyCircle = (s, context, cell, seq, contextTransform) => {
 const _onePolySquare = (s, context, cell, seq, contextTransform) => {
   let cellContext = context;
   if (contextTransform) {
-    cellContext = contextTransform(_.clone(cellContext), cell, seq);
+    cellContext = contextTransform(clone(cellContext), cell, seq);
   }
 
   let squareWidth = cell.w;
@@ -47,7 +47,7 @@ const _onePolySquare = (s, context, cell, seq, contextTransform) => {
 const _onePolyTriangleSimple = (s, context, cell, seq, contextTransform) => {
   let cellContext = context;
   if (contextTransform) {
-    cellContext = contextTransform(_.clone(cellContext), cell, seq);
+    cellContext = contextTransform(clone(cellContext), cell, seq);
   }
 
   let shiftX = (cellContext.cellVaryX || 0) + cellContext.timeShiftX;
@@ -94,7 +94,7 @@ const _onePolyTriangleEqualiteral = (
 ) => {
   let cellContext = context;
   if (contextTransform) {
-    cellContext = contextTransform(_.clone(cellContext), cell, seq);
+    cellContext = contextTransform(clone(cellContext), cell, seq);
   }
 
   s.push();
@@ -131,7 +131,7 @@ const _onePolyTriangleEqualiteral = (
 const _onePolyParallelogram = (s, context, cell, seq, contextTransform) => {
   let cellContext = context;
   if (contextTransform) {
-    cellContext = contextTransform(_.clone(cellContext), cell, seq);
+    cellContext = contextTransform(clone(cellContext), cell, seq);
   }
 
   let shiftX = cellContext.shiftX || 0;
@@ -169,7 +169,7 @@ const _onePolyParallelogram = (s, context, cell, seq, contextTransform) => {
 const _onePolyConcentricCircle = (s, context, cell, seq, contextTransform) => {
   let cellContext = context;
   if (contextTransform) {
-    cellContext = contextTransform(_.clone(cellContext), cell, seq);
+    cellContext = contextTransform(clone(cellContext), cell, seq);
   }
 
   let strokeCount = cellContext.strokeCount || 1;
